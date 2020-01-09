@@ -46,7 +46,8 @@
               "node_modules/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js",
               "node_modules/admin-lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js",
               "node_modules/admin-lte/bower_components/fastclick/lib/fastclick.js",
-              "node_modules/admin-lte/dist/js/adminlte.min.js"
+              "node_modules/admin-lte/dist/js/adminlte.min.js",
+              "node_modules/admin-lte/dist/js/demo.js"
             ]
           },
           "configurations": {
