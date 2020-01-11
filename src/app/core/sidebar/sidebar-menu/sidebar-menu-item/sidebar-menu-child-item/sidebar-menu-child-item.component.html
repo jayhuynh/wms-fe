@@ -1,0 +1,23 @@
+<a
+   *ngIf="data.getChildren().length == 0;else hasChild"
+   [routerLink]="[data.getRouterLink()]"
+>
+  <i class="{{ data.getIcon() }}"></i> {{ data.getTitle() }}
+</a>
+<ng-template #hasChild>
+  <a href="#"><i class="{{ data.getIcon() }}"></i> {{ data.getTitle() }}
+    <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+  </a>
+  <ul class="treeview-menu">
+    <li app-sidebar-menu-child-item
+        *ngFor="let sidebarMenuChildItem of data.getChildren()"
+        [data]="sidebarMenuChildItem"
+        [ngClass]="{'treeview': sidebarMenuChildItem.getChildren().length > 0}"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+    ></li>
+  </ul>
+</ng-template>
+

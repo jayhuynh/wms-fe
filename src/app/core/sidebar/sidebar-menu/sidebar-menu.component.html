@@ -1,0 +1,8 @@
+<ul class="sidebar-menu" data-widget="tree">
+  <li app-sidebar-menu-header [title]="sidebarMenuHeader"></li>
+  <li app-sidebar-menu-item
+      *ngFor="let sidebarMenuItem of sidebarMenuItems"
+      [data]="sidebarMenuItem"
+      [ngClass]="{'treeview': sidebarMenuItem.getChildren().length > 0}"
+  ></li>
+</ul>
