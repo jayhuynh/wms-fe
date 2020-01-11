@@ -6,13 +6,23 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { SidebarComponent } from './core/sidebar/sidebar.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { SidebarSearchBoxComponent } from './core/sidebar/sidebar-search-box/sidebar-search-box.component';
+import { SidebarMenuComponent } from './core/sidebar/sidebar-menu/sidebar-menu.component';
+import { SidebarMenuItemComponent } from './core/sidebar/sidebar-menu/sidebar-menu-item/sidebar-menu-item.component';
+import { SidebarMenuHeaderComponent } from './core/sidebar/sidebar-menu/sidebar-menu-header/sidebar-menu-header.component';
+import { SidebarMenuChildItemComponent } from './core/sidebar/sidebar-menu/sidebar-menu-item/sidebar-menu-child-item/sidebar-menu-child-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarSearchBoxComponent,
+    SidebarMenuComponent,
+    SidebarMenuItemComponent,
+    SidebarMenuHeaderComponent,
+    SidebarMenuChildItemComponent,
   ],
   imports: [
     BrowserModule,
