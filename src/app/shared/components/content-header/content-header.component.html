@@ -1,0 +1,16 @@
+<section class="content-header">
+  <h1>
+    {{ data.title }}
+    <small>{{ data.smallTitle }}</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <a [routerLink]="['/']"><i class="fa fa-dashboard"></i> Home</a>
+    </li>
+    <li
+      app-content-header-breadcrumb-item
+      *ngFor="let breadcrumbItem of data.breadcrumb"
+      [data]="breadcrumbItem"
+    ></li>
+  </ol>
+</section>

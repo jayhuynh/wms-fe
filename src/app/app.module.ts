@@ -15,6 +15,8 @@ import { UserComponent } from './modules/user/default/user.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { UserListComponent } from './modules/user/components/user-list/user-list.component';
 import { UserNewComponent } from './modules/user/components/user-new/user-new.component';
+import { ContentHeaderComponent } from './shared/components/content-header/content-header.component';
+import { ContentHeaderBreadcrumbItemComponent } from './shared/components/content-header/content-header-breadcrumb-item/content-header-breadcrumb-item.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { UserNewComponent } from './modules/user/components/user-new/user-new.co
     UserComponent,
     DashboardComponent,
     UserListComponent,
-    UserNewComponent
+    UserNewComponent,
+    ContentHeaderComponent,
+    ContentHeaderBreadcrumbItemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ContentHeaderModel} from '../../../../shared/models/content-header/content-header.model';
 
 @Component({
   selector: 'app-user-list',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  contentHeader: ContentHeaderModel;
+
+  constructor() {
+    this.contentHeader = new ContentHeaderModel(
+      'User List',
+      'Small Title',
+      [
+        {routerLink: '/users', title: 'User'},
+        {routerLink: '/users', title: 'User List'},
+      ]
+    );
+  }
 
   ngOnInit() {
   }
