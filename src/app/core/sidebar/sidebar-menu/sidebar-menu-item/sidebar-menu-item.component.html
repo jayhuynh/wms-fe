@@ -18,7 +18,6 @@
       *ngFor="let sidebarMenuChildItem of data.getChildren()"
       [data]="sidebarMenuChildItem"
       [ngClass]="{'treeview': sidebarMenuChildItem.getChildren().length > 0}"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
+      [class.active]="router.isActive(sidebarMenuChildItem.getRouterLink(), true)"
   ></li>
 </ul>

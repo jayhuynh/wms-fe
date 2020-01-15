@@ -1,5 +1,6 @@
 import {Component, ElementRef, Input, OnInit} from '@angular/core';
 import { SidebarMenuItemModel } from '../../../../shared/models/sidebar/sidebar-menu-item.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: '[app-sidebar-menu-item]',
@@ -10,7 +11,7 @@ export class SidebarMenuItemComponent implements OnInit {
 
   @Input() data: SidebarMenuItemModel;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
