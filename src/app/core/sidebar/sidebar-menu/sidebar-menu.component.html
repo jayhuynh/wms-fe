@@ -3,6 +3,7 @@
   <li app-sidebar-menu-item
       *ngFor="let sidebarMenuItem of sidebarMenuItems"
       [data]="sidebarMenuItem"
-      [ngClass]="{'treeview': sidebarMenuItem.getChildren().length > 0}"
+      [ngClass]="{'treeview': true}"
+      [class.active]="router.isActive(sidebarMenuItem.getRouterLink())"
   ></li>
 </ul>

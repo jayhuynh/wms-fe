@@ -11,6 +11,8 @@ import { SidebarMenuComponent } from './core/sidebar/sidebar-menu/sidebar-menu.c
 import { SidebarMenuItemComponent } from './core/sidebar/sidebar-menu/sidebar-menu-item/sidebar-menu-item.component';
 import { SidebarMenuHeaderComponent } from './core/sidebar/sidebar-menu/sidebar-menu-header/sidebar-menu-header.component';
 import { SidebarMenuChildItemComponent } from './core/sidebar/sidebar-menu/sidebar-menu-item/sidebar-menu-child-item/sidebar-menu-child-item.component';
+import { UserComponent } from './modules/user/default/user.component';
+import { DashboardComponent } from './core/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { SidebarMenuChildItemComponent } from './core/sidebar/sidebar-menu/sideb
     SidebarMenuItemComponent,
     SidebarMenuHeaderComponent,
     SidebarMenuChildItemComponent,
+    UserComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
