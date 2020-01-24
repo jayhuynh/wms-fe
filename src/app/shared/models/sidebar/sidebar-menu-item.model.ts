@@ -41,7 +41,7 @@ export class SidebarMenuItemModel {
     return this.children;
   }
 
-  addChildren(child: SidebarMenuChildItemModel) {
+  addChild(child: SidebarMenuChildItemModel) {
     this.children.push(child);
   }
 }

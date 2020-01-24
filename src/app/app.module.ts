@@ -13,6 +13,12 @@ import { SidebarMenuHeaderComponent } from './core/sidebar/sidebar-menu/sidebar-
 import { SidebarMenuChildItemComponent } from './core/sidebar/sidebar-menu/sidebar-menu-item/sidebar-menu-child-item/sidebar-menu-child-item.component';
 import { UserComponent } from './modules/user/default/user.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
+import { UserListComponent } from './modules/user/components/user-list/user-list.component';
+import { UserNewComponent } from './modules/user/components/user-new/user-new.component';
+import { ContentHeaderComponent } from './shared/components/content-header/content-header.component';
+import { ContentHeaderBreadcrumbItemComponent } from './shared/components/content-header/content-header-breadcrumb-item/content-header-breadcrumb-item.component';
+import { TableComponent } from './shared/components/table/table.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,11 +32,17 @@ import { DashboardComponent } from './core/dashboard/dashboard.component';
     SidebarMenuHeaderComponent,
     SidebarMenuChildItemComponent,
     UserComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserListComponent,
+    UserNewComponent,
+    ContentHeaderComponent,
+    ContentHeaderBreadcrumbItemComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
