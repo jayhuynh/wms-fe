@@ -17,6 +17,8 @@ import { UserListComponent } from './modules/user/components/user-list/user-list
 import { UserNewComponent } from './modules/user/components/user-new/user-new.component';
 import { ContentHeaderComponent } from './shared/components/content-header/content-header.component';
 import { ContentHeaderBreadcrumbItemComponent } from './shared/components/content-header/content-header-breadcrumb-item/content-header-breadcrumb-item.component';
+import { TableComponent } from './shared/components/table/table.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,11 +36,13 @@ import { ContentHeaderBreadcrumbItemComponent } from './shared/components/conten
     UserListComponent,
     UserNewComponent,
     ContentHeaderComponent,
-    ContentHeaderBreadcrumbItemComponent
+    ContentHeaderBreadcrumbItemComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
