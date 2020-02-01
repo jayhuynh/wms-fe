@@ -6,14 +6,27 @@
   <div class="box-body table-responsive">
     <table class="table table-bordered table-hover">
       <thead>
-        <tr>
-          <th *ngFor="let column of data.columns">{{ column.name }}</th>
-        </tr>
+      <tr>
+        <th *ngFor="let column of data.columns">{{ column.name }}</th>
+      </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let row of data.rows">
-          <td *ngFor="let column of data.columns">{{ row[column.value] }}</td>
-        </tr>
+      <tr *ngFor="let row of data.rows">
+        <td *ngFor="let column of data.columns">
+          <app-default
+            *ngIf="column.template != template.DEFAULT; else defaultTemplate"
+            [data]="{
+              item: row,
+              value: column.value,
+              template: column.template,
+              options: column.options
+            }"
+          ></app-default>
+          <ng-template #defaultTemplate>
+            {{ row[column.value] }}
+          </ng-template>
+        </td>
+      </tr>
       </tbody>
     </table>
   </div>

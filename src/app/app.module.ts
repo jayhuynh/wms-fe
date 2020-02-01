@@ -19,6 +19,9 @@ import { ContentHeaderComponent } from './shared/components/content-header/conte
 import { ContentHeaderBreadcrumbItemComponent } from './shared/components/content-header/content-header-breadcrumb-item/content-header-breadcrumb-item.component';
 import { TableComponent } from './shared/components/table/table.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ModalComponent } from './shared/components/modal/modal.component';
+import { LinkComponent } from './shared/components/templates/link/link.component';
+import { DefaultComponent } from './shared/components/templates/default/default.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import {HttpClientModule} from '@angular/common/http';
     UserNewComponent,
     ContentHeaderComponent,
     ContentHeaderBreadcrumbItemComponent,
-    TableComponent
+    TableComponent,
+    ModalComponent,
+    LinkComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
