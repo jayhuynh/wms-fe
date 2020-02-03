@@ -17,10 +17,7 @@ export class SidebarMenuComponent implements OnInit {
     this.sidebarMenuHeader = 'MAIN NAVIGATION';
     this.sidebarMenuItems.push(
       new SidebarMenuItemModel('/dashboard', 'fa fa-dashboard', 'Dashboard', []),
-      new SidebarMenuItemModel('/users', 'fa fa-user', 'User', [
-        new SidebarMenuChildItemModel('/users', 'fa fa-circle-o', 'User List', []),
-        new SidebarMenuChildItemModel('/users/new', 'fa fa-circle-o', 'Create New User', [])
-      ])
+      new SidebarMenuItemModel('/users', 'fa fa-user', 'User', [])
     );
   }
 

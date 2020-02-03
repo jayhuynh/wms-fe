@@ -1,1 +1,43 @@
-<p>user-detail works!</p>
+<ng-template #userDetail>
+  <app-modal [bsModalRef]="userDetailModalRef">
+<!--   Title section  -->
+    <span title>User Detail</span>
+<!--   Content section  -->
+    <form class="form-horizontal" content>
+      <div class="box-body">
+        <div class="form-group">
+          <label for="inputId" class="col-sm-4 control-label">Id</label>
+
+          <div class="input-group col-sm-6">
+            <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+            <input type="id" class="form-control" id="inputId" placeholder="Id" value="{{ user.id }}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" class="col-sm-4 control-label">Email</label>
+
+          <div class="input-group col-sm-6">
+            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{ user.email }}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputFullName" class="col-sm-4 control-label">Full Name</label>
+
+          <div class="input-group col-sm-6">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input type="fullname" class="form-control" id="inputFullName" placeholder="Full Name" value="{{ user.fullName }}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputRole" class="col-sm-4 control-label">Role</label>
+
+          <div class="input-group col-sm-6">
+            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+            <input type="role" class="form-control" id="inputRole" placeholder="Role" value="{{ user.role }}" disabled>
+          </div>
+        </div>
+      </div>
+    </form>
+  </app-modal>
+</ng-template>

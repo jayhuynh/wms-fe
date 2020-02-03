@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-link',
-  templateUrl: './link.component.html',
-  styleUrls: ['./link.component.scss']
+  selector: 'app-link-template',
+  templateUrl: './link-template.component.html',
+  styleUrls: ['./link-template.component.scss']
 })
-export class LinkComponent implements OnInit {
+export class LinkTemplateComponent implements OnInit {
 
   @Input() value: any;
   @Input() options: any;

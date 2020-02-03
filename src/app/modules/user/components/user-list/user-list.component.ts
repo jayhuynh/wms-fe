@@ -22,7 +22,6 @@ export class UserListComponent implements OnInit {
       'Small Title',
       [
         {routerLink: RouteNames.USERS, title: 'User'},
-        {routerLink: RouteNames.USERS, title: 'User List'},
       ]
     );
 

@@ -2,11 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Template} from '../template.name';
 
 @Component({
-  selector: 'app-default',
-  templateUrl: './default.component.html',
-  styleUrls: ['./default.component.scss']
+  selector: 'app-default-template',
+  templateUrl: './default-template.component.html',
+  styleUrls: ['./default-template.component.scss']
 })
-export class DefaultComponent implements OnInit {
+export class DefaultTemplateComponent implements OnInit {
 
   @Input() data: {
     item: any,
