@@ -50,8 +50,8 @@ export class UserListComponent implements OnInit {
             }
           }},
         {name: 'Role', value: 'role', template: Template.DEFAULT},
-        {name: 'Created At', value: 'createdAt', template: Template.DEFAULT},
-        {name: 'Updated At', value: 'updatedAt', template: Template.DEFAULT}
+        {name: 'Created At', value: 'createdAt', template: Template.DATETIME},
+        {name: 'Updated At', value: 'updatedAt', template: Template.DATETIME}
       ],
       []
     );

@@ -24,6 +24,7 @@ import {DefaultTemplateComponent} from './shared/components/templates/default-te
 import {UserDetailComponent} from './modules/user/components/user-detail/user-detail.component';
 import {ModalModule} from 'ngx-bootstrap';
 import {FormsModule} from '@angular/forms';
+import { DatetimeTemplateComponent } from './shared/components/templates/datetime-template/datetime-template.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {FormsModule} from '@angular/forms';
     ModalComponent,
     LinkTemplateComponent,
     DefaultTemplateComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DatetimeTemplateComponent
   ],
   imports: [
     BrowserModule,
