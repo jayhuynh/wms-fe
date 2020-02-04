@@ -25,6 +25,8 @@ import {UserDetailComponent} from './modules/user/components/user-detail/user-de
 import {ModalModule} from 'ngx-bootstrap';
 import {FormsModule} from '@angular/forms';
 import { DatetimeTemplateComponent } from './shared/components/templates/datetime-template/datetime-template.component';
+import {UserDeleteComponent} from './modules/user/components/user-delete/user-delete.component';
+import { ConfirmWindowComponent } from './shared/components/confirm-window/confirm-window.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { DatetimeTemplateComponent } from './shared/components/templates/datetim
     LinkTemplateComponent,
     DefaultTemplateComponent,
     UserDetailComponent,
-    DatetimeTemplateComponent
+    DatetimeTemplateComponent,
+    UserDeleteComponent,
+    ConfirmWindowComponent
   ],
   imports: [
     BrowserModule,

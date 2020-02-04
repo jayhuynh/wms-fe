@@ -1,0 +1,8 @@
+<button type="button"
+        class="btn btn-danger pull-left"
+        (click)="openConfirmWindow(userDeleteConfirmWindow)"
+><i class="fa fa-trash"></i> Delete</button>
+
+<ng-template #userDeleteConfirmWindow>
+  <app-confirm-window></app-confirm-window>
+</ng-template>
