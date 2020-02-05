@@ -1,5 +1,8 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewEncapsulation} from '@angular/core';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {UserService} from '../../user.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {RouteNames} from '../../../../route.name';
 
 @Component({
   selector: 'app-user-delete',
@@ -10,7 +13,12 @@ export class UserDeleteComponent implements OnInit {
 
   confirmWindowModelRef: BsModalRef;
 
-  constructor(private modelService: BsModalService) {
+  constructor(
+    private modelService: BsModalService,
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
   }
 
   ngOnInit() {
@@ -20,4 +28,28 @@ export class UserDeleteComponent implements OnInit {
     this.confirmWindowModelRef = this.modelService.show(template, {class: 'modal-sm'});
   }
 
+  confirm(): void {
+    this.route.params
+      .subscribe((params) => {
+        this.userService
+          .deleteUser(params.id)
+          .subscribe((message) => {
+            this.userService.reloadUsers.next();
+            this.hideAllModals();
+          }, (error) => {
+            console.log(error);
+          })
+        ;
+      });
+  }
+
+  decline(): void {
+    this.confirmWindowModelRef.hide();
+  }
+
+  private hideAllModals(): void {
+    while (this.modelService.getModalsCount() > 0) {
+      this.modelService.hide(this.modelService.getModalsCount());
+    }
+  }
 }
