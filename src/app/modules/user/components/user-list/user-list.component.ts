@@ -31,22 +31,19 @@ export class UserListComponent implements OnInit {
         {name: 'Id', value: 'id', template: Template.LINK, options: {
             route: RouteNames.USERS,
             params: {
-              id: 'id',
-              email: 'email'
+              id: 'id'
             }
           }},
         {name: 'Email', value: 'email', template: Template.LINK, options: {
             route: RouteNames.USERS,
             params: {
-              id: 'id',
-              email: 'email'
+              id: 'id'
             }
           }},
         {name: 'Full Name', value: 'fullName', template: Template.LINK, options: {
             route: RouteNames.USERS,
             params: {
-              id: 'id',
-              email: 'email'
+              id: 'id'
             }
           }},
         {name: 'Role', value: 'role', template: Template.DEFAULT},
