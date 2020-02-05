@@ -13,4 +13,8 @@ export class UserService {
   getUsers() {
     return this.http.get(environment.apiEndpoint + '/users');
   }
+
+  getUser(id: number) {
+    return this.http.get(environment.apiEndpoint + '/users/' + id);
+  }
 }

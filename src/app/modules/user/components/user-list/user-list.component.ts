@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ContentHeaderModel} from '../../../../shared/models/content-header/content-header.model';
 import {TableModel} from '../../../../shared/models/table/table.model';
 import {UserService} from '../../user.service';
+import {Template} from '../../../../shared/components/templates/template.name';
+import {RouteNames} from '../../../../route.name';
 
 @Component({
   selector: 'app-user-list',
@@ -19,20 +21,34 @@ export class UserListComponent implements OnInit {
       'User List',
       'Small Title',
       [
-        {routerLink: '/users', title: 'User'},
-        {routerLink: '/users', title: 'User List'},
+        {routerLink: RouteNames.USERS, title: 'User'},
       ]
     );
 
     this.userTable = new TableModel(
       'User Table',
       [
-        {name: 'Id', value: 'id'},
-        {name: 'Email', value: 'email'},
-        {name: 'Full Name', value: 'fullName'},
-        {name: 'Role', value: 'role'},
-        {name: 'Created At', value: 'createdAt'},
-        {name: 'Updated At', value: 'updatedAt'}
+        {name: 'Id', value: 'id', template: Template.LINK, options: {
+            route: RouteNames.USERS,
+            params: {
+              id: 'id'
+            }
+          }},
+        {name: 'Email', value: 'email', template: Template.LINK, options: {
+            route: RouteNames.USERS,
+            params: {
+              id: 'id'
+            }
+          }},
+        {name: 'Full Name', value: 'fullName', template: Template.LINK, options: {
+            route: RouteNames.USERS,
+            params: {
+              id: 'id'
+            }
+          }},
+        {name: 'Role', value: 'role', template: Template.DEFAULT},
+        {name: 'Created At', value: 'createdAt', template: Template.DATETIME},
+        {name: 'Updated At', value: 'updatedAt', template: Template.DATETIME}
       ],
       []
     );

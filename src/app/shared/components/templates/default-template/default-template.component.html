@@ -1,0 +1,11 @@
+<!--Link template-->
+<app-link-template *ngIf="data.template == template.LINK"
+          [value]="data.item[data.value]"
+          [options]="data.options"
+          [item]="data.item"
+></app-link-template>
+
+<!--Datetime template-->
+<app-datetime-template *ngIf="data.template == template.DATETIME"
+                       [value]="data.item[data.value]"
+></app-datetime-template>
