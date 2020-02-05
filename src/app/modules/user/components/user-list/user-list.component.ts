@@ -13,7 +13,7 @@ import {Subscription} from 'rxjs';
 })
 export class UserListComponent implements OnInit, OnDestroy {
 
-  private userSubcription: Subscription;
+  private userSubscription: Subscription;
 
   contentHeader: ContentHeaderModel;
 
@@ -58,7 +58,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.userSubcription = this.userService.reloadUsers.subscribe(() => {
+    this.userSubscription = this.userService.reloadUsers.subscribe(() => {
       this.userService.getUsers().subscribe((users: any[]) => {
         this.userTable.rows = users;
       });
@@ -68,6 +68,6 @@ export class UserListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.userSubcription.unsubscribe();
+    this.userSubscription.unsubscribe();
   }
 }

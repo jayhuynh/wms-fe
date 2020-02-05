@@ -1,8 +1,8 @@
-import {Component, OnInit, TemplateRef, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {UserService} from '../../user.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {RouteNames} from '../../../../route.name';
+import {AlertService} from '../../../../shared/components/alert/alert.service';
 
 @Component({
   selector: 'app-user-delete',
@@ -17,7 +17,7 @@ export class UserDeleteComponent implements OnInit {
     private modelService: BsModalService,
     private userService: UserService,
     private route: ActivatedRoute,
-    private router: Router
+    private alertService: AlertService
   ) {
   }
 
@@ -35,6 +35,7 @@ export class UserDeleteComponent implements OnInit {
           .deleteUser(params.id)
           .subscribe((message) => {
             this.userService.reloadUsers.next();
+            this.showAlert();
             this.hideAllModals();
           }, (error) => {
             console.log(error);
@@ -45,6 +46,13 @@ export class UserDeleteComponent implements OnInit {
 
   decline(): void {
     this.confirmWindowModelRef.hide();
+  }
+
+  private showAlert(): void {
+    this.alertService.showAlert.next({
+      type: this.alertService.types.SUCCESS,
+      message: 'You have just deleted a user'
+    });
   }
 
   private hideAllModals(): void {

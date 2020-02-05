@@ -27,6 +27,7 @@ import {FormsModule} from '@angular/forms';
 import { DatetimeTemplateComponent } from './shared/components/templates/datetime-template/datetime-template.component';
 import {UserDeleteComponent} from './modules/user/components/user-delete/user-delete.component';
 import { ConfirmWindowComponent } from './shared/components/confirm-window/confirm-window.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ConfirmWindowComponent } from './shared/components/confirm-window/confi
     UserDetailComponent,
     DatetimeTemplateComponent,
     UserDeleteComponent,
-    ConfirmWindowComponent
+    ConfirmWindowComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
