@@ -7,7 +7,7 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {RouteNames} from '../../../../route.name';
 import {UserService} from '../../user.service';
-import {NgForm} from '@angular/forms';
+import {ModalDirective} from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-user-detail',
@@ -49,8 +49,12 @@ export class UserDetailComponent implements OnInit, OnDestroy {
 
     this.modalService.onHidden
       .pipe(takeUntil(this.destroy))
-      .subscribe((reason: string) => {
-        this.router.navigateByUrl(RouteNames.USERS);
+      .subscribe((reason) => {
+        // Check the case if we have the confirm window modal over user detail modal
+        // If we hide the confirm window we still have the user detail modal
+        if (this.modalService.getModalsCount() === 0) {
+          this.router.navigateByUrl(RouteNames.USERS);
+        }
       });
   }
 

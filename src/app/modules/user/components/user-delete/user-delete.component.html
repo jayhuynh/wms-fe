@@ -1,0 +1,12 @@
+<button type="button"
+        class="btn btn-danger pull-left"
+        (click)="openConfirmWindow(userDeleteConfirmWindow)"
+><i class="fa fa-trash"></i> Delete</button>
+
+<ng-template #userDeleteConfirmWindow>
+  <app-confirm-window>
+    <p question>Do you want to confirm?</p>
+    <button left-btn type="button" class="btn btn-default" (click)="decline()">No</button>
+    <button right-btn type="button" class="btn btn-primary" (click)="confirm()">Yes</button>
+  </app-confirm-window>
+</ng-template>

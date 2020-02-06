@@ -1,0 +1,11 @@
+.alert-container {
+  padding: 1rem;
+
+  .alert {
+    width: 80%;
+    margin: auto;
+    -webkit-box-shadow: 8px 11px 18px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 8px 11px 18px 0px rgba(0,0,0,0.29);
+    box-shadow: 8px 11px 18px 0px rgba(0,0,0,0.29);
+  }
+}
