@@ -1,0 +1,39 @@
+{
+  "sidebar": {
+    "menu": {
+      "title" : "MAIN NAVIGATION",
+      "dashboard": "Dashboard",
+      "user": "User"
+    },
+    "search_box": {
+      "placeholder": "Search..."
+    }
+  },
+
+  "user": {
+    "list": {
+      "title": "User List",
+      "small_title": "User List Small Title",
+      "breadcrumb": {
+        "1": "User"
+      },
+      "table": {
+        "name": "User Table",
+        "columns": {
+          "id": "Id",
+          "email": "Email",
+          "full_name": "Full Name",
+          "role": "Role",
+          "created_at": "Created At",
+          "updated_at": "Updated At"
+        }
+      }
+    }
+  },
+
+  "content_header": {
+    "breadcrumb": {
+      "home": "Home"
+    }
+  }
+}

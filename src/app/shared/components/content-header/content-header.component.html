@@ -1,11 +1,11 @@
 <section class="content-header">
   <h1>
-    {{ data.title }}
-    <small>{{ data.smallTitle }}</small>
+    {{ data.title | translate }}
+    <small>{{ data.smallTitle | translate }}</small>
   </h1>
   <ol class="breadcrumb">
     <li>
-      <a [routerLink]="['/']"><i class="fa fa-dashboard"></i> Home</a>
+      <a [routerLink]="['/']"><i class="fa fa-dashboard"></i> {{ 'content_header.breadcrumb.home' | translate }}</a>
     </li>
     <li
       app-content-header-breadcrumb-item

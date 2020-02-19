@@ -14,10 +14,10 @@ export class SidebarMenuComponent implements OnInit {
   sidebarMenuItems: SidebarMenuItemModel[] = [];
 
   constructor(public router: Router) {
-    this.sidebarMenuHeader = 'MAIN NAVIGATION';
+    this.sidebarMenuHeader = 'sidebar.menu.title';
     this.sidebarMenuItems.push(
-      new SidebarMenuItemModel('/dashboard', 'fa fa-dashboard', 'Dashboard', []),
-      new SidebarMenuItemModel('/users', 'fa fa-user', 'User', [])
+      new SidebarMenuItemModel('/dashboard', 'fa fa-dashboard', 'sidebar.menu.dashboard', []),
+      new SidebarMenuItemModel('/users', 'fa fa-user', 'sidebar.menu.user', [])
     );
   }
 

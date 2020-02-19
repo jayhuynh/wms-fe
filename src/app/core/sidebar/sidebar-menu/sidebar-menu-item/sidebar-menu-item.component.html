@@ -2,13 +2,13 @@
   *ngIf="data.getChildren().length == 0"
   [routerLink]="[data.getRouterLink()]"
 >
-  <i class="{{ data.getIcon() }}"></i> <span>{{ data.getTitle() }}</span>
+  <i class="{{ data.getIcon() }}"></i> <span>{{ data.getTitle() | translate }}</span>
 </a>
 <a
   *ngIf="data.getChildren().length > 0"
   href="#"
 >
-  <i class="{{ data.getIcon() }}"></i> <span>{{ data.getTitle() }}</span>
+  <i class="{{ data.getIcon() }}"></i> <span>{{ data.getTitle() | translate }}</span>
   <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
