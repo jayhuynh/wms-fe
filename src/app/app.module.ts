@@ -17,17 +17,19 @@ import {UserNewComponent} from './modules/user/components/user-new/user-new.comp
 import {ContentHeaderComponent} from './shared/components/content-header/content-header.component';
 import {ContentHeaderBreadcrumbItemComponent} from './shared/components/content-header/content-header-breadcrumb-item/content-header-breadcrumb-item.component';
 import {TableComponent} from './shared/components/table/table.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ModalComponent} from './shared/components/modal/modal.component';
 import {LinkTemplateComponent} from './shared/components/templates/link-template/link-template.component';
 import {DefaultTemplateComponent} from './shared/components/templates/default-template/default-template.component';
 import {UserDetailComponent} from './modules/user/components/user-detail/user-detail.component';
 import {ModalModule} from 'ngx-bootstrap';
 import {FormsModule} from '@angular/forms';
-import { DatetimeTemplateComponent } from './shared/components/templates/datetime-template/datetime-template.component';
+import {DatetimeTemplateComponent} from './shared/components/templates/datetime-template/datetime-template.component';
 import {UserDeleteComponent} from './modules/user/components/user-delete/user-delete.component';
-import { ConfirmWindowComponent } from './shared/components/confirm-window/confirm-window.component';
-import { AlertComponent } from './shared/components/alert/alert.component';
+import {ConfirmWindowComponent} from './shared/components/confirm-window/confirm-window.component';
+import {AlertComponent} from './shared/components/alert/alert.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,15 @@ import { AlertComponent } from './shared/components/alert/alert.component';
     AppRoutingModule,
     HttpClientModule,
     ModalModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   entryComponents: [
     ModalComponent
@@ -68,5 +78,10 @@ import { AlertComponent } from './shared/components/alert/alert.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }

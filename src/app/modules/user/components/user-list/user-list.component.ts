@@ -21,37 +21,37 @@ export class UserListComponent implements OnInit, OnDestroy {
 
   constructor(private userService: UserService) {
     this.contentHeader = new ContentHeaderModel(
-      'User List',
-      'Small Title',
+      'user.list.title',
+      'user.list.small_title',
       [
-        {routerLink: RouteNames.USERS, title: 'User'},
+        {routerLink: RouteNames.USERS, title: 'user.list.breadcrumb.1'},
       ]
     );
 
     this.userTable = new TableModel(
-      'User Table',
+      'user.list.table.name',
       [
-        {name: 'Id', value: 'id', template: Template.LINK, options: {
+        {name: 'user.list.table.columns.id', value: 'id', template: Template.LINK, options: {
             route: RouteNames.USERS,
             params: {
               id: 'id'
             }
           }},
-        {name: 'Email', value: 'email', template: Template.LINK, options: {
+        {name: 'user.list.table.columns.email', value: 'email', template: Template.LINK, options: {
             route: RouteNames.USERS,
             params: {
               id: 'id'
             }
           }},
-        {name: 'Full Name', value: 'fullName', template: Template.LINK, options: {
+        {name: 'user.list.table.columns.full_name', value: 'fullName', template: Template.LINK, options: {
             route: RouteNames.USERS,
             params: {
               id: 'id'
             }
           }},
-        {name: 'Role', value: 'role', template: Template.DEFAULT},
-        {name: 'Created At', value: 'createdAt', template: Template.DATETIME},
-        {name: 'Updated At', value: 'updatedAt', template: Template.DATETIME}
+        {name: 'user.list.table.columns.role', value: 'role', template: Template.DEFAULT},
+        {name: 'user.list.table.columns.created_at', value: 'createdAt', template: Template.DATETIME},
+        {name: 'user.list.table.columns.updated_at', value: 'updatedAt', template: Template.DATETIME}
       ],
       []
     );
