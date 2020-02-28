@@ -23,7 +23,7 @@ import {LinkTemplateComponent} from './shared/components/templates/link-template
 import {DefaultTemplateComponent} from './shared/components/templates/default-template/default-template.component';
 import {UserDetailComponent} from './modules/user/components/user-detail/user-detail.component';
 import {ModalModule} from 'ngx-bootstrap';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DatetimeTemplateComponent} from './shared/components/templates/datetime-template/datetime-template.component';
 import {UserDeleteComponent} from './modules/user/components/user-delete/user-delete.component';
 import {ConfirmWindowComponent} from './shared/components/confirm-window/confirm-window.component';
@@ -70,7 +70,8 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    ReactiveFormsModule
   ],
   entryComponents: [
     ModalComponent

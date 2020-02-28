@@ -1,7 +1,73 @@
-<app-content-header [data]="contentHeader"></app-content-header>
+<ng-template #userNew>
+  <app-modal [bsModalRef]="userNewModalRef">
+    <!--   Title section  -->
+    <span title>Create New User</span>
+    <!--   Content section  -->
+    <form class="form-horizontal" content [formGroup]="signupForm">
+      <div class="box-body">
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="email" class="col-sm-4 control-label">Email</label>
+            <div class="input-group col-sm-6">
+              <input
+                type="text"
+                id="email"
+                formControlName="email"
+                class="form-control">
+              <span
+                *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched"
+                class="help-block" style="color:#ff7e79">Please enter a valid email!</span>
+            </div>
+          </div>
 
-<!-- Main content -->
-<section class="content">
-  <p>user-new works!</p>
-</section>
+          <div class="form-group">
+            <label for="password" class="col-sm-4 control-label">Password</label>
+            <div class="input-group col-sm-6">
+              <input
+                type="password"
+                id="password"
+                formControlName="password"
+                class="form-control">
+              <span
+                *ngIf="!signupForm.get('userData.password').valid && signupForm.get('userData.password').touched"
+                class="help-block" style="color:#ff7e79">This field is required!</span>
+            </div>
+          </div>
 
+          <div class="form-group">
+            <label for="fullName" class="col-sm-4 control-label">Full Name</label>
+            <div class="input-group col-sm-6">
+              <input formControlName="fullName" class="form-control" id="fullName">
+              <span
+                *ngIf="!signupForm.get('userData.fullName').valid && signupForm.get('userData.fullName').touched"
+                class="help-block" style="color:#ff7e79">This field is required!</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="role" class="col-sm-4 control-label">Role</label>
+            <div class="input-group col-sm-6">
+              <select formControlName="role" class="form-control" id="role">
+                <option value="admin">Admin</option>
+                <option value="sub">Member</option>
+              </select>
+              <span
+                *ngIf="!signupForm.get('userData.role').valid && signupForm.get('userData.role').touched"
+                class="help-block" style="color:#ff7e79">This field is required!</span>
+            </div>
+          </div>
+        </div>
+        </div>
+    </form>
+
+    <div footer><button class="btn btn-primary" type="submit" [disabled]="!signupForm.valid" (click)="openConfirmWindow(userAddConfirmWindow)">Submit</button></div>
+  </app-modal>
+</ng-template>
+
+<ng-template #userAddConfirmWindow>
+  <app-confirm-window>
+    <p question>Confirm to create new user</p>
+    <button left-btn type="button" class="btn btn-default" (click)="decline()">No</button>
+    <button right-btn type="button" class="btn btn-primary" (click)="confirm()">Yes</button>
+  </app-confirm-window>
+</ng-template>

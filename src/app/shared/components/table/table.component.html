@@ -1,6 +1,10 @@
 <div class="box">
   <div class="box-header with-border">
     <h3 class="box-title">{{ data.name | translate }}</h3>
+    <button type="button"
+            class="btn btn-success pull-right"
+            [routerLink]="[data.options.newUrl]"
+    ><i class="fa fa-plus"></i> Create</button>
   </div>
 
   <div class="box-body table-responsive">
