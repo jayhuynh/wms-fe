@@ -55,6 +55,10 @@ export class UserListComponent implements OnInit, OnDestroy {
       ],
       []
     );
+
+    this.userTable.options = {
+      newUrl: RouteNames.USERS_NEW
+    };
   }
 
   ngOnInit() {

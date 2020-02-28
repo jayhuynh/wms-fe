@@ -4,6 +4,9 @@ export class TableModel {
   private _name: string;
   private _columns: Array<{ name: string; value: string; template: Template; options?: any }>;
   private _rows: any[];
+  private _options: {
+    newUrl: string;
+  };
 
   constructor(name: string, columns: Array<{ name: string; value: string; template: Template; options?: any }>, rows: any[]) {
     this._name = name;
@@ -33,5 +36,13 @@ export class TableModel {
 
   set name(value: string) {
     this._name = value;
+  }
+
+  get options(): { newUrl: string } {
+    return this._options;
+  }
+
+  set options(value: { newUrl: string }) {
+    this._options = value;
   }
 }
